@@ -15,7 +15,8 @@ class PegawaiController extends Controller
         $pegawai = Pegawai::where('id',$id)->first();
         if($pegawai == null){
             return response()->json([
-                "message" => "Data not found"
+                "message" => "Data not found",
+                "code" => "404"
             ], 404);
         }
         return $pegawai;

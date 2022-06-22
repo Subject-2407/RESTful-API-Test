@@ -15,7 +15,8 @@ class BukuController extends Controller
         $buku = Buku::where('id',$id)->first();
         if($buku == null){
             return response()->json([
-                "message" => "Data not found"
+                "message" => "Data not found",
+                "code" => "404"
             ], 404);
         }
         return $buku;
